@@ -1,4 +1,5 @@
 package glizz.autoarmorplugin2;
+import org.bukkit.ChatColor;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -10,7 +11,7 @@ public class AutoArmorCommandExecutor implements CommandExecutor {
         @Override
         public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args) {
             if (!(sender instanceof Player)) {
-                sender.sendMessage("Este comando solo puede ser ejecutado por un jugador.");
+                sender.sendMessage(ChatColor.RED+"Glizzy"+ChatColor.WHITE+"Core" + " "+ChatColor.DARK_GRAY+"»" +" "+ChatColor.RED+"Este comando solo puede ser ejecutado por un jugador.");
                 return true;
             }
 
@@ -19,7 +20,7 @@ public class AutoArmorCommandExecutor implements CommandExecutor {
             // Verifica si el jugador ya tiene alguna pieza de armadura equipada
             if (player.getInventory().getHelmet() != null || player.getInventory().getChestplate() != null ||
                     player.getInventory().getLeggings() != null || player.getInventory().getBoots() != null) {
-                sender.sendMessage("Ya tienes una armadura equipada. Quita la armadura actual antes de usar este comando.");
+                sender.sendMessage(ChatColor.RED+"Glizzy"+ChatColor.WHITE+"Core" + " "+ChatColor.DARK_GRAY+"»" +" "+ChatColor.RED+"Ya tienes una armadura equipada. Quita la armadura actual antes de usar este comando.");
                 return true;
             }
 
@@ -39,9 +40,9 @@ public class AutoArmorCommandExecutor implements CommandExecutor {
             }
 
             if (foundArmor) {
-                sender.sendMessage("¡Tu armadura ha sido equipada automáticamente!");
+                sender.sendMessage(ChatColor.RED+"Glizzy"+ChatColor.WHITE+"Core" + " "+ChatColor.DARK_GRAY+"»" +" "+ChatColor.RED+"¡Tu armadura ha sido equipada automáticamente!");
             } else {
-                sender.sendMessage("No tienes suficiente armadura en tu inventario.");
+                sender.sendMessage(ChatColor.RED+"Glizzy"+ChatColor.WHITE+"Core" + " "+ChatColor.DARK_GRAY+"»" +" "+ChatColor.RED+"No tienes suficiente armadura en tu inventario.");
             }
 
             return true;
