@@ -1,0 +1,7 @@
+name: AutoArmorPlugin
+version: '1.2'
+main: glizz.autoarmorplugin2.AutoArmorPlugin
+commands:
+  autoarmor:
+    description: Equipa automáticamente la armadura.
+    usage: /autoarmor
