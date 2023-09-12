@@ -3,5 +3,11 @@ version: '${project.version}'
 main: glizz.autoarmorplugin2.AutoArmorPlugin
 commands:
   autoarmor:
-    description: Equipa automáticamente la armadura.
+    description: Equipa automáticamente la armadura del jugador.
     usage: /autoarmor
+    permission: autoarmor.use
+
+permissions:
+  autoarmor.use:
+    description: Permite a los jugadores usar el comando AutoArmor.
+    default: false

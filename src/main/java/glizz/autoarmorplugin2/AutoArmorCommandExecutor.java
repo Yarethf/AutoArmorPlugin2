@@ -16,7 +16,10 @@ public class AutoArmorCommandExecutor implements CommandExecutor {
             }
 
             Player player = (Player) sender;
-
+            if (!player.hasPermission("autoarmor.use")) {
+                player.sendMessage(ChatColor.RED+"Glizzy"+ChatColor.WHITE+"Core" + " "+ChatColor.DARK_GRAY+"»" +" "+ChatColor.RED+"No tienes permiso para usar este comando.");
+                return true;
+            }
             // Verifica si el jugador ya tiene alguna pieza de armadura equipada
             if (player.getInventory().getHelmet() != null || player.getInventory().getChestplate() != null ||
                     player.getInventory().getLeggings() != null || player.getInventory().getBoots() != null) {
